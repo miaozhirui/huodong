@@ -1,0 +1,52 @@
+/*注册页面*/
+
+#wbregpage .login-banner{
+
+    background: url(../img/bighead.jpg) no-repeat;
+    background-size: contain;
+}
+
+
+#wbregpage #getPhcodebtn{
+
+    color:#4bd394;
+}
+
+#wbregpage label.label-checkbox input[type=checkbox]:checked+.item-media i.icon-form-checkbox{
+    background-color:#4bd394;
+}
+
+
+#wbregpage #regandloginbtn{
+    width:90%;
+}
+
+#wbregpage #iagreementbtn h5 {
+    font-size: normal;
+}
+
+#wbregpage .button.button-big{
+
+    background-image:linear-gradient(-270deg,#6dd587,#07cfad);
+}
+
+#wbregpage .flashpoints li .logo-one {
+
+    background: url("../img/cpt.png") no-repeat;
+    background-size: contain;
+}
+#wbregpage .flashpoints li .logo-two {
+
+    background: url("../img/rkt.png") no-repeat;
+    background-size: contain;
+}
+#wbregpage .flashpoints li .logo-three {
+
+    background: url("../img/mny.png") no-repeat;
+    background-size: contain;
+}
+#wbregpage .flashpoints li .logo-four {
+
+    background: url("../img/pig.png") no-repeat;
+    background-size: contain;
+}

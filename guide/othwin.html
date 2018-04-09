@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="expires" content="0">
+    <title>急用钱平台，贷款当天到账，最高十万元</title>
+    <meta name="keywords" content="消费金融、信用贷、现金贷、现金分期、小额资产、现金贷系统、风控系统、运营系统">
+    <meta name="description" content="CREDAN是您的一站式消费金融、现金分期、现金贷SAAS服务提供商，无需部署，您即将拥有完善的风控，反欺诈方案、自动化运营、获客管理、
+以及全周期的客户管理，极大化的增加您的投资回报率！"/>
+    <meta name="viewport"
+          content="initial-scale=1, maximum-scale=1,width=device-width,minimum-scale=1.0,user-scalable=no">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+
+    <!-- 禁止微信缓存 -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate"/>
+    <meta http-equiv="Pragma" content="no-cache"/>
+    <meta http-equiv="Expires" content="0"/>
+    <style type="text/css">
+        body,div,iframe{
+            margin: 0;
+            padding: 0;
+        }
+        .header{
+            height: 40px;
+            line-height: 40px;
+            background: #fff;
+            border-bottom: 1px solid #efeff4;
+            font-size: 16px;
+            color: #151515;
+        }
+        .back{
+            margin-left: 20px;
+            padding-left: 18px;
+            background: url(img/back.png) no-repeat left center;
+            background-size: 12px 20px;
+        }
+        #othIframe{
+            width: 100%;
+            height: 100%;
+            border: 0;
+            overflow-x:hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="back" onclick="backHome()">返回贷款超市</div>
+    </div>
+    <iframe id="othIframe" onload="this.style.height=(window.innerHeight-41)+'px';" height="100%"></iframe>
+</body>
+</html>
+<script type="text/javascript">
+    var href = window.location.search;
+    var url = href.substring(3);
+    var obj = document.getElementById("othIframe");
+    obj.src=url;
+    function backHome(){
+        window.location.href="coop.html?merchantId=18fd13cc9aa611e6afb66c92bf314c17";
+    }
+</script>

@@ -1,0 +1,1302 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="expires" content="0">
+    <title>快乐生活，一触即达</title>
+    <meta name="keywords" content="消费金融、信用贷、现金贷、现金分期、小额资产、现金贷系统、风控系统、运营系统">
+    <meta name="description" content="CREDAN是您的一站式消费金融、现金分期、现金贷SAAS服务提供商，无需部署，您即将拥有完善的风控，反欺诈方案、自动化运营、获客管理、
+以及全周期的客户管理，极大化的增加您的投资回报率！" />
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1,width=device-width,minimum-scale=1.0,user-scalable=no">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <!-- 禁止微信缓存 -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <link rel="stylesheet" href="css/sm.min.css">
+    <link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm-extend.min.css">
+    <!-- build:css css/main.min.css -->
+    <link rel="stylesheet" href="css/style.css?_=1.5.2">
+    <link rel="stylesheet" href="css/custom.css?_=1.5.2">
+    <link rel="stylesheet" href="css/temp_wb.css?_=1.5.1">
+    <link rel="stylesheet" href="css/timely.css?_=1.5.1">
+    <!-- /build -->
+    <script>
+    var proTitle = '钞好用';
+    var productName = '';
+    var userUrlPath = '';
+    var fixQuota = '';
+    var mobileUserText1 = '';
+    var merchantIdArr=[
+        'de2712d2398944c5afe397bd420abe99',
+        'c3558723d4564469af77564321a73988',
+        '1f8b67e60bef4df193e7a1d53116e969',
+        '5480c707095243ed96c513d6dc4d8710',
+        '39458bc5c5804568acebdcd1bf1f892e',
+        'ebcee1af5d3849beb2b43bb99c127027'
+    ];
+    var curMIDState=false;
+
+    (function redirectTo(){//重定向判断
+        var open = false,
+            saasList=[
+                ['fubeilinghuaqian',30,''],//商户名，转换比率 1-100
+                ['nadianhua',0,''],
+                ['aiduodai',0,'']
+            ];
+
+
+        if(!open) return;
+
+        var curSaas = false,ratio,backUrl;
+        for(var i =0; i < saasList.length; i++){
+            if(saasList[i][0]==productName){
+                curSaas=true;
+                ratio = saasList[i][1];
+                backUrl = saasList[i][2];
+                break;
+            }
+        };
+
+        if(!curSaas) return;
+
+        var randNum = parseInt(100*Math.random());
+
+        if(randNum<=ratio){
+            if(backUrl){
+                location.href=backUrl;
+            }else{
+                window.location.href='http://app.credan.com/v1.5.1/coop_static.html';
+            }
+
+        }
+
+    })();
+
+    </script>
+    <!-- 百度统计 -->
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?63e99b4dc47aba59c823ad4cb894a595";
+          var s = document.getElementsByTagName("script")[0];
+          s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head>
+
+<body>
+    <div class="page-group">
+        <!-- page1 begin 认证登录-->
+        <div id="wbregpage" class="page  page-current">
+            <div class="content">
+                <div class="login-banner">
+                    <img class="w100" src="img/bighead.png" style="visibility: hidden">
+                </div>
+                <div class="graystrip w100"></div>
+                <div class="list-block mg00 tempwb_ul">
+                    <ul>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title label"><img src="img/phoneicon.png" alt="请输入您的手机号"></div>
+                                    <div class="item-input">
+                                        <input id="phoneNum" type="tel" placeholder="请输入您的手机号">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title label"><img src="img/lockicon.png" alt="短信验证码"></div>
+                                    <div class="item-input">
+                                        <input id="enterPhcode" type="number" placeholder="短信验证码" maxlength="4" pattern="[0-9]*" oncontextmenu="return false" onpaste="return false" oncopy="return false" oncut="return false" autocomplete="off" size="4">
+                                        <p class="getaphonecode2">
+                                            <input type="button" id="getPhcodebtn" href="#" class="button" value="点击获取" />
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li style="display: none;">
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title label"><img src="img/humanicon.png" alt="请输入验证码（非必填）"></div>
+                                    <div class="item-input">
+                                        <input id="invitInput" type="text" placeholder="请输入邀请码（非必填）">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-input rqcheckit">
+                                        <label class="label-checkbox lt">
+                                            <input id="iAgreementthis" type="checkbox" name="iAgreement">
+                                            <div class="item-media"><i class="icon icon-form-checkbox"></i></div>
+                                        </label>
+                                        <a href="#" id="iagreementbtn" class="item-subtitle indent05 lt iagreementgo open-iagreement"><h5>我同意《钞好用用户注册协议》<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;及《钞好用个人借款协议》</h5></a>
+                                        <!--<a href="#" id="iagreementbtn" class="item-subtitle indent05 lt iagreementgo open-iagreement"><h5>我同意《钞好用用户注册协议》<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;及《钞好用个人借款协议》</h5></a>-->
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                
+                <a id="regandloginbtn" href="#" class="button button-big mgauto">点击申请</a>
+                
+                <ul class="flashpoints blk mgauto">
+                    <li class="blk lt clearfix">
+                        <div class="logo-one"></div>
+                        <!--<img class="lt" src="img/cpt.png">-->
+                        <h5 class="blk lt">门槛低</h5>
+                    </li>
+                    <li class="blk lt clearfix">
+                        <div class="logo-two"></div>
+                        <!--<img class="lt" src="img/rkt.png">-->
+                        <h5 class="blk lt">到账快</h5>
+                    </li>
+                    <li class="blk lt clearfix">
+                        <div class="logo-three"></div>
+                        <!--<img class="lt" src="img/mny.png">-->
+                        <h5 class="blk lt">额度高</h5>
+                    </li>
+                    <li class="blk lt clearfix">
+                        <div class="logo-four"></div>
+                        <!--<img class="lt" src="img/pig.png">-->
+                        <h5 class="blk lt">费用少</h5>
+                    </li>
+                </ul>
+                <div id="popup-captcha"></div>
+                
+            </div>
+        </div>
+        <!-- page1 end -->
+        <!-- page2 begin 产品选择 -->
+        <div id="selectPD" class="page">
+            <!--选择产品页面-->
+            <!--<nav class="bar bar-tab">
+                    <div class="row no-gutter">
+                      <div class="col-33"><a href="#" class="button button-big bluebtn"></a></div>
+                    </div>
+            </nav>-->
+            <div class="content w95 mgauto">
+                <div id="flashcredit" class="pditembg bdr2 goldengradient">
+                    <!-- <div class="gq-icon"></div> -->
+                    <p class="blk lt" id="flashName">闪电贷</p>
+                    <h6 class="PDdis blk lt">一步申请，利率更低</h6>
+                    <div class="row PDdisitem">
+                        <div class="col-33 bglittleline">
+                            <h6 class="fs1">额度</h6>
+                            <h4 id="flashCount">600</h4>
+                        </div>
+                        <div class="col-33 bglittleline">
+                            <h6 class="fs1">周期</h6>
+                            <h4 id="flashDays">10天</h4>
+                        </div>
+                        <div class="col-33">
+                            <h6 class="fs1">日利率</h6>
+                            <h4 id="flashSfee">0.066%</h4>
+                        </div>
+                    </div>
+                    <a id="regflash" href="#" class="button button-big mgauto">免费申请</a>
+                    <a style="display: none;" id="flashinreview" href="#" class="button button-big mgauto">审核中</a>
+                    <!--                <div id="flashsuccess" class="row" style="display: none;">
+                        <div class="col-50"><a id="flashpromote" href="#" class="button button-big mgauto">去提额</a></div>
+                        <div class="col-50"><a id="falshcashin" href="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx743dd8669981aeb2&redirect_uri=http://app.credan.com/wx/index.html&response_type=code&scope=snsapi_userinfo&#wechat_redirect" class="button button-big mgauto">去提现</a></div>
+                    </div>
+ --><a style="display: none;" id="falshcashin" class="button button-big mgauto" href="#" class="button button-big mgauto">去提现</a>
+                    <div id="flashreject" class="row" style="display: none;">
+                        <div class="col-50"><a id="flashregagain" href="#basicIF" class="button button-big mgauto">再次申请</a></div>
+                        <div class="col-50"><a id="tryregrain" href="#basicTimely" class="button button-big mgauto">试试及时雨</a></div>
+                    </div>
+                </div>
+                <div id="raincredit" class="pditembg bdr2 greengradient">
+                    <p class="blk lt">及时雨</p>
+                    <h6 class="PDdis blk lt">额度更高，周期更长</h6>
+                    <div class="row PDdisitem">
+                        <div class="col-33 bglittleline">
+                            <h6 class="fs1">额度</h6>
+                            <h4>600-3000</h4>
+                        </div>
+                        <div class="col-33 bglittleline">
+                            <h6 class="fs1">周期</h6>
+                            <h4>14-30天</h4>
+                        </div>
+                        <div class="col-33">
+                            <h6 class="fs1">日利率</h6>
+                            <h4>0.066%</h4>
+                        </div>
+                    </div>
+                    <a id="regrain" href="#basicTimely" class="button button-big mgauto">免费申请</a>
+                    <a style="display: none;" id="raininreview" href="#" class="button button-big mgauto">审核中</a>
+                    <a style="display: none;" id="raincashin" href="#" class="button button-big mgauto">去提现</a>
+                    <div style="display: none" id="rainreject" class="row">
+                        <div class="col-50"><a id="rainregagain" href="#basicTimely" class="button button-big mgauto">再次尝试</a></div>
+                        <div class="col-50"><a id="invitefriend" href="#" class="button button-big mgauto">邀请好友</a></div>
+                    </div>
+                </div>
+                <!--现金分期-->
+                <div id="cashinstallment" class="pditembg bdr2 instalment">
+                    <p class="blk lt">现金分期</p>
+                    <h6 class="PDdis blk lt">额度更高，周期更长</h6>
+                    <div class="row PDdisitem">
+                        <div class="col-33 bglittleline">
+                            <h6 class="fs1">额度</h6>
+                            <h4>600-3000</h4>
+                        </div>
+                        <div class="col-33 bglittleline">
+                            <h6 class="fs1">周期</h6>
+                            <h4>3期</h4>
+                        </div>
+                        <div class="col-33">
+                            <h6 class="fs1">日利率</h6>
+                            <h4>0.066%</h4>
+                        </div>
+                    </div>
+                    <a id="reginstallment" href="#userInfoGather" class="btn2">免费申请</a>
+                    <a style="display: none;" href="#" class="btn2">审核中</a>
+                    <a style="display: none;" id="getcashinstallment" href="#" class="button button-big mgauto">去提现</a>
+                    <div style="display: none" class="row">
+                        <div class="col-50"><a id="installmentregagain" href="#userInfoGather" class="btn2">再次尝试</a></div>
+                        <div class="col-50"><a id="installmentinvitefriend" href="#" class="btn2">邀请好友</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- page2 end -->
+        <!-- page3 begin 闪电贷 -->
+        <div id="basicIF" class="page">
+            <!--基本信息页开始-->
+            <nav class="bar bar-tab">
+                <div class="row no-gutter">
+                    <a id="flashcreditGo" href="#" class="btn">立即提交</a>
+                </div>
+            </nav>
+            <div class="content w95 mgauto">
+                <div id="flashcredit2" class="pditembg bdr2 goldengradient">
+                    <span class="RTflag blk rtbg-size"></span>
+                    <p class="blk lt" id="flashName2">闪电贷</p>
+                    <h6 class="PDdis blk lt">一步申请，利率更低</h6>
+                    <div class="row PDdisitem">
+                        <div class="col-33 bglittleline">
+                            <h6>额度</h6>
+                            <h4 id="flashCount2">600</h4>
+                        </div>
+                        <div class="col-33 bglittleline">
+                            <h6>周期</h6>
+                            <h4 id="flashDays2">10天</h4>
+                        </div>
+                        <div class="col-33">
+                            <h6>日利率</h6>
+                            <h4 id="flashSfee2">0.066%</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="list-block mgauto">
+                    <ul class="blk  bdr2">
+                        <li>
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title label">真实姓名：</div>
+                                    <div class="item-input">
+                                        <input id="humanName" type="text" placeholder="请输入您的真实姓名">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title label">身份证号：</div>
+                                    <div class="item-input">
+                                        <input id="humanId" type="text" placeholder="请输入您的身份证号码">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title label">手机号码：</div>
+                                    <div class="item-input">
+                                        <input id="basicPhoneNum" type="tel" placeholder="请输入您的手机号" readonly="readonly">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title label">服务密码：</div>
+                                    <div class="item-input">
+                                        <input id="vestphonePswd" type="password" placeholder="手机服务密码" pattern="[0-9]*">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <h5 id="idontknowPD" class="tstct  mg1 server-pwd">不知道手机服务密码？</h5>
+                </div>
+            </div>
+        </div>
+        <!-- page3 end -->
+
+        <!-- page4 begin 急时雨额度选择 -->
+        <div id="basicTimely" class="page">
+            <div class="content timely-bg">
+                <div class="content-block">
+                    <div class="content-block-title">请选择期望的额度：<span id="wantCash">600</span>元</div>
+                    <div class="list-block">
+                        <input id="holdingCash" type="range" value="3000" min="600" max="3000" step="100" />
+                    </div>
+                    <div class="list-block process-tips">滑动调整期望额度</div>
+                </div>
+                <div class="content-block countsth">
+                    <div class="content-block-title">请选择使用天数：<span id="wantDays">14</span>天</div>
+                    <div class="list-block">
+                        <!-- <input id="selectDays" type="range" value="7" min="7" max="14" step="7"/> -->
+                        <div id="daysList" class="row">
+                            <div class="col-33">
+                                <div class="idboxsm checked">
+                                    <h1>14天</h1>
+                                    <input name="days" type="radio" value="14" />
+                                </div>
+                            </div>
+                            <div class="col-33">
+                                <div class="idboxsm">
+                                    <h1>21天</h1>
+                                    <input name="days" type="radio" value="20" />
+                                </div>
+                            </div>
+                            <div class="col-33">
+                                <div class="idboxsm">
+                                    <h1>30天</h1>
+                                    <input name="days" type="radio" value="30" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row no-gutter pd2" style="display: none;">
+                            <div class="col-60 omnibusfee">
+                                <div class="actual-cash">综合费用:
+                                    <div class="cdhelp"></div><span id="processingFee">17.5</span>元</div>
+                            </div>
+                            <div class="col-60" id="actualCashHelp">
+                                <div class="actual-cash">到帐金额:
+                                    <div class="cdhelp"></div><span id="actualCash">482.5</span>元</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <nav class="bar bar-tab">
+                    <div class="row no-gutter">
+                        <a id="timelyQuoteBtn" href="#" class="btn">下一步</a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!-- page4 end -->
+        <!-- page5 begin 用户信息收集 -->
+        <div id="userInfoGather" class="page">
+            <div class="content timely-bg">
+                <div class="list-block list-form">
+                    <div class="head1">必填信息</div>
+                    <ul class="list-nape">
+                        <li id="identityCard" class="item-content item-link">
+                            <div class="item-media"><i class="icon icon-f1"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title">身份验证</div>
+                                <div class="item-after">未验证</div>
+                            </div>
+                        </li>
+                        <li id="mobileVerify" class="item-content item-link">
+                            <div class="item-media"><i class="icon icon-f2"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title">运营商验证</div>
+                                <div class="item-after">未验证</div>
+                            </div>
+                        </li>
+                        <li id="otherLinkman" class="item-content item-link">
+                            <div class="item-media"><i class="icon icon-f3"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title">联系人信息</div>
+                                <div class="item-after">未验证</div>
+                            </div>
+                        </li>
+                        <li id="userMoreVerify" class="item-content item-link">
+                            <div class="item-media"><i class="icon icon-f4"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title">更多信息</div>
+                                <div class="item-after">未验证</div>
+                            </div>
+                        </li>
+                    </ul>
+                    <!-- <div class="head1">选填信息(完善可解锁现金分期)</div> -->
+                    <ul class="list-nape" style='display: none;'>
+                        <li id="userSesameFraction" class="item-content item-link">
+                            <div class="item-media"><i class="icon icon-f5"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title">芝麻分验证</div>
+                                <div class="item-after">未验证</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <nav class="bar bar-tab">
+                    <div class="row no-gutter">
+                        <a id="userAllInfoBtn" href="#" class="btn">立即提交</a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!-- page5 end -->
+        <!-- page6 begin 刷新结果页面 -->
+        <div id="watingRST" class="page">
+            <nav class="bar bar-tab">
+                <div class="row no-gutter">
+                    <a id="refreshRstBtn" href="#" class="btn"><i class="refresh-btn">刷新查看审核结果</i></a>
+                </div>
+            </nav>
+            <div class="content">
+                <div class="biggreenbg w100">
+                    <div class="load-container load3">
+                        <div class="loader">
+                            <img src="img/loadinggif.png">
+                        </div>
+                    </div>
+                    <img class="watingGTH" src="img/gantanhao.png">
+                    <h6 class="reviewingword blk">审核中…</h6>
+                    <img class="bigwave" src="img/wave.png">
+                </div>
+                <h3 class="tstct">提交成功！</h3>
+                <h5 class="watingword tstct">申请订单高发期，审核可能会存在一些延迟，<br>请您耐心等待！</h5>
+            </div>
+        </div>
+        <!--刷新结果页面,with out 大号-->
+        <div id="watingRSTwithoutbigNo" class="page">
+            <!--刷新结果页面-->
+            <nav class="bar bar-tab">
+                <div class="row no-gutter">
+                    <a id="refreshRstBtnwithoutbigNo" href="#" class="btn"><i class="refresh-btn">刷新查看审核结果</i> </a>
+                </div>
+            </nav>
+            <div class="content">
+                <div class="bigcontt w90">
+                    <div class="bigbluelinebg w100 clearfix">
+                        <dl class="blk mgauto">
+                            <dt class="blk lt"><img class="w100" src="img/loadinggif.png"></dt>
+                            <dd class="colfff">
+                                <h3>提交成功</h3></dd>
+                            <dd class="colfff opr37">
+                                <h5>审核中…</h5></dd>
+                            <span class="blk"><img class="w100" src="img/gantanhao.png"></span>
+                        </dl>
+                    </div>
+                    <img class="w56 mgauto" src="img/newwechatcodes.jpg">
+                    <h5 class="erweimaword blk tstct">(关注上方微信公众号，<span class="fc10">立即提现</span>)</h5>
+                    <img class="w100" src="img/middleline.jpg">
+                    <ul class="howgotowechart blk">
+                        <li class="blk clearfix">
+                            <h6 class="blk lt tstct">1</h6>
+                            <h5 class="blk lt">保存该二维码图片，微信打开，长按识别二维码，<span class="fc10">进入公众号</span>，点击菜单栏-提现还款，<span class="fc10">立即拿钱</span></h5>
+                        </li>
+                        <li class="blk clearfix">
+                            <h6 class="blk lt tstct">2</h6>
+                            <h5 class="blk lt">关注公众号:<span class="product-name"></span>点击菜单栏-提现还款</h5></li>
+                        <li class="blk clearfix">
+                            <h6 class="blk lt tstct">3</h6>
+                            <h5 class="blk lt">进入上方公众号参与新手<span class="fc10">3000元</span>现金活动</h5></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--刷新结果页面成功,with out 大号-->
+        <div id="watingRSTwithoutbigNoOk" class="page">
+            <div class="content">
+                <div class="bigcontt w90">
+                    <div class="biggreenlinebg w100 clearfix">
+                        <dl class="blk mgauto">
+                            <dt class="blk lt"><img class="w100" src="img/loadinggif.png"></dt>
+                            <dd class="colfff">
+                                <h3 style="padding-top: .6rem;">审核成功</h3></dd>
+                            <span class="blk"><img class="w100" src="img/duihao.png"></span>
+                        </dl>
+                    </div>
+                    <img class="w56 mgauto" src="img/newwechatcodes.jpg">
+                    <h5 class="erweimaword blk tstct">(关注上方微信公众号，<span class="fc10">立即提现</span>)</h5>
+                    <img class="w100" src="img/middleline.jpg">
+                    <ul class="howgotowechart blk">
+                        <li class="blk clearfix">
+                            <h6 class="blk lt tstct">1</h6>
+                            <h5 class="blk lt">保存该二维码图片，微信打开，长按识别二维码，<span class="fc10">进入公众号</span>，点击菜单栏-提现还款，<span class="fc10">立即拿钱</span></h5>
+                        </li>
+                        <li class="blk clearfix">
+                            <h6 class="blk lt tstct">2</h6>
+                            <h5 class="blk lt">关注公众号:<span class="product-name"></span>点击菜单栏-提现还款</h5></li>
+                        <li class="blk clearfix">
+                            <h6 class="blk lt tstct">3</h6>
+                            <h5 class="blk lt">进入上方公众号参与新手<span class="fc10">3000元</span>现金活动</h5></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--刷新结果页面失败,with out 大号-->
+        <div id="watingRSTwithoutbigNonot" class="page">
+            <!--刷新结果页面-->
+            <!--        <nav class="bar bar-tab">
+                <div class="row no-gutter">
+                    <a id="rstwithoutbignot" href="#" class="button button-big bottombutton">去试试“及时雨”</a>
+                </div>
+            </nav>
+ -->
+            <div class="content">
+                <div class="bigcontt w90">
+                    <div class="bigredlinebg w100 clearfix">
+                        <dl class="blk mgauto">
+                            <dt class="blk lt"><img class="w100" src="img/loadinggif.png"></dt>
+                            <dd class="colfff">
+                                <h3 style="padding-top: .6rem;">审核失败</h3></dd>
+                            <span class="blk"><img class="w100" src="img/macha.png"></span>
+                        </dl>
+                    </div>
+                    <img class="w56 mgauto" src="img/newwechatcodes.jpg">
+                    <h5 class="erweimaword blk tstct">(请微信内打开，非微信内请截屏)</h5>
+                    <img class="w100" src="img/middleline.jpg">
+                    <ul class="howgotowechart blk">
+                        <li class="blk clearfix">
+                            <h6 class="blk lt tstct">1</h6>
+                            <h5 class="blk lt">保存该二维码图片至手机，用微信打开并长按识别二维码，进行现金提现</h5>
+                        </li>
+                        <li class="blk clearfix">
+                            <h6 class="blk lt tstct">2</h6>
+                            <h5 class="blk lt">长按二维码进入公众号点击菜单栏-提现还款  立刻轻松取现。</h5>
+                        </li>
+                        <li class="blk clearfix">
+                            <h6 class="blk lt tstct">3</h6>
+                            <h5 class="blk lt">关注公众号:<span class="product-name"></span>点击菜单栏-提现还款 </h5></li>
+                        <li class="blk clearfix">
+                            <h6 class="blk lt tstct">4</h6>
+                            <h5 class="blk lt">立即邀请好友赚3000元</h5></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--所有弹出页面-->
+    <div class="popup popup-iagreement">
+        <!--弹出注册协议页面-->
+        <header class="bar bar-nav">
+            <a class="button button-link button-nav pull-left close-popup" href="#">
+                <span class="icon icon-left"></span> 返回
+            </a>
+            <h1 class="title">钞好用用户注册协议</h1>
+        </header>
+        <div class="content">
+            <div class="content-block">
+                <div class="list-block mgt_2">
+                    <ul class="bdrds16">
+                        <div id="iagreement" class="content-padded" style="padding-top: .5rem;"></div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--<div class="popup popup-goestowechat">-->
+    <div class="popup popup-resultwithbigOk">
+        <nav class="bar bar-tab">
+            <div class="row no-gutter">
+                <a id="resultgoforcash" href="#" class="btn">去提现</a>
+            </div>
+        </nav>
+        <div class="content">
+            <img class="w100" src="img/adv.jpg">
+            <div id="resultimgbox" class="blk"><img src="img/reviewok.png"></div>
+            <h3 id="resulttitleWB" class="blk tstct">恭喜您！审核成功</h3>
+            <h5 id="resultword" class="blk tstct">亲爱的用户，您已通过<span class="product-name"></span>的审核！快去提现吧！</h5>
+            <h5 id="getcashandshare" class="blk tstct">提现完成后可以邀请好友，会获得佣金哦！</h5>
+        </div>
+    </div>
+    <div class="popup popup-resultwithbigNotok">
+        <!--    <nav class="bar bar-tab" >
+            <div class="row no-gutter">
+                <a id="resulttrycash" href="#" class="button button-big bottombutton">去试试及时雨</a>
+            </div>
+        </nav> -->
+        <!--<div class="">-->
+        <!--<a href="http://click.xuezhionline.com/union/KeRmjH3XSr5%2BiFpovTy3RQ%3D%3D" class="jnad external" onclick="onAbcClick('金牛贷')"><img src="img/jnad.jpg"></a>-->
+        <!-- <a id="advimgnotok" href="#"><img class="w100" src="img/adv.jpg"></a> -->
+        <div id="resultimgbox" class="blk"><img src="img/reviewnotok.png"></div>
+        <h3 id="resulttitle" class="blk tstct">很抱歉，审核失败</h3> 
+        <div class="money-area">
+            <header>
+                推荐您申请以下最新贷款产品
+            </header>
+            <div class="list" id="product-list">
+                <ul id="remen">
+                </ul>
+            </div>
+            <!--<h5 id="resultwordnot" class="blk tstct">亲爱的用户，很抱歉您未能通过钞好用审核</h5>-->
+        </div>
+        <a href="#" class="bottom-banner" onclick="othBtn()">
+            <img src="img/new-bottom-banner.jpg">
+        </a> 
+    </div>
+    <!-- timely popup 1 begin 急时雨身份证信息效验 -->
+    <div class="popup popup-user-iden">
+        <div class="content timely-bg">
+            <div class="content-block">
+                <div class="list-block mgt_1">
+                    <div class="up-photo">
+                        <div class="row no-gutter">
+                            <div class="col-40" id="reportholdidcard"><img id="cardIdPic" src="img/no_pic_2.png" alt="手持身份证照片" class="photo" /></div>
+                            <div class="col-60">
+                                <div class="photo-info">
+                                    1.身份证上所有信息清晰可见。
+                                    <br> 2.照片需免冠，建议未化妆，手持证件人的五官清晰可见。
+                                    <br> 3.支持.jpg .jpeg .bmp .gif格式照片。
+                                    <br>
+                                </div>
+                            </div>
+                            <div class="up-photo-bottom">
+                                <i class="icon-f5"></i>点击上传手持身份证
+                                <input id="clicktoupload" name="upholdcard" type="file" capture="camcorder" accept="image/*" style="opacity:0; position: absolute;top:0;left:0; width: 100%; height: 2.3rem;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-block">
+                <div class="list-block mgt_1">
+                    <div class="row no-gutter">
+                        <div class="col-50">
+                            <div id="positiveBox">
+                                <img src="img/sfz1.jpg" alt="身份证正面" class="photo2" id="positivePic">
+                            </div>
+                            <div class="up-photo-bottom2" id="positiveBtn">点击上传身份证正面
+                                <input id="positiveupload" name="positive" type="file" capture="camcorder" accept="image/*" style="opacity:0; position: absolute;top:0;left:0; width: 100%; height: 2.3rem;">
+                            </div>
+                        </div>
+                        <div class="col-50">
+                            <div id="reverseBox">
+                                <img src="img/sfz2.jpg" alt="身份证反面" class="photo2" style="float: right;" id="reversePic">
+                            </div>
+                            <div class="up-photo-bottom2" style="float: right;" id="reverseBtn">点击上传身份证反面
+                                <input id="reverseupload" name="reverse" type="file" capture="camcorder" accept="image/*" style="opacity:0; position: absolute;top:0;left:0; width: 100%; height: 2.3rem;">
+                            </div>
+                        </div>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="list-block mgt_1" style="padding-bottom: 3rem;">
+                <ul id="userCardForm">
+                    <li>
+                        <div class="item-content">
+                            <div class="item-media"><i class="icon icon-form-name"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title label">姓名：</div>
+                                <div class="item-input">
+                                    <input type="text" placeholder="请输入您的真实姓名">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item-content">
+                            <div class="item-media"><i class="icon icon-form-name"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title label" id="showAddressDesc">身份证号 ：</div>
+                                <div class="item-input">
+                                    <input type="text" placeholder="请输入您的身份证号码">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item-content">
+                            <div class="item-media"><i class="icon icon-form-name"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title label" id="showAddressDesc">身份证地址: <span class='icon-addr'></span></div>
+                                <div class="item-input">
+                                    <input type="text" placeholder="请输入您的身份证地址">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item-content">
+                            <div class="item-media"><i class="icon icon-form-name"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title label">银行卡号：</div>
+                                <div class="item-input">
+                                    <input type="tel" placeholder="请输入用于取现的银行卡号">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <nav class="bar bar-tab">
+            <div class="row no-gutter">
+                <button type="button" id="userIdenBtn" class="btn">提交</button>
+            </div>
+        </nav>
+    </div>
+    </div>
+    <!-- timely popup 1 end -->
+    <!-- timely popup 2 begin 急时雨手机校验 -->
+    <div class="popup popup-mobile">
+        <div class="content timely-bg">
+            <div class="list-block mg00">
+                <ul>
+                    <li>
+                        <div class="item-content">
+                            <div class="item-media"><i class="icon icon-form-name"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title label">手机号：</div>
+                                <div class="item-input">
+                                    <input id="mobileStr" type="text" value="" readonly="true">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item-content">
+                            <div class="item-media"><i class="icon icon-form-name"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title label">服务密码：</div>
+                                <div class="item-input">
+                                    <input id="mobilePwd" type="password" placeholder="请输入手机服务密码">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="content-block mobile-info">
+                <h5>移动用户：</h5>
+                <p>方法一：发送短信MMCZ到10086;</p>
+                <p>方法二：手机拨打10086转人工服务查询；</p>
+                <p>方法三：手机登录10086.cn，初始密码为您手机后6位，点“忘记密码”重新设置。</p>
+                <h5>联通用户：</h5>
+                <p>方法一：发送短信“MMCZ#6位新密码”至10010;</p>
+                <p>方法二：手机拨打10010转人工服务查询；</p>
+                <p>方法三：手机登录wap.10010.cn，初始密码为您手机后6位，点“忘记密码”重新设置。</p>
+                <h5>电信用户：</h5>
+                <p>方法一：编辑“503#机主名称#身份证号码”发送至10001;</p>
+                <p>方法二：手机拨打10000转人工服务查询；</p>
+                <p>方法三：手机登录wapzt.189.cn，初始密码为您手机后6位，点“忘记密码”重新设置。 </p>
+            </div>
+            <nav class="bar bar-tab">
+                <div class="row no-gutter">
+                    <button type="button" id="mobileVerifyBtn" class="btn">认证</button>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- timely popup 2 end -->
+    <!-- timely popup 3 begin 急时雨紧急联系人校验 -->
+    <div class="popup popup-linkman">
+        <div class="content timely-bg">
+            <!--紧急联系人1 begin-->
+            <div class="content-block-title title1">紧急联系人1<span class="fc1"> (必填)</span></div>
+            <div class="list-block mgb1">
+                <ul class="people-ul">
+                    <li class="item-link">
+                        <div class="item-content">
+                            <div class="item-media"><i class="icon icon-form-name"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title label">关系</div>
+                                <div class="item-input input-txt create-contactre1">
+                                    请选择</div>
+                                <select id="linkmanSelect1" style="display: none;">
+                                    <option value="0">请选择</option>
+                                    <option value="1">配偶</option>
+                                    <option value="2">父母</option>
+                                </select>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item-content">
+                            <div class="item-media"><i class="icon icon-form-name"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title label">姓名</div>
+                                <div class="item-input">
+                                    <input id="linkman_name1" value="" type="text" placeholder="紧急联系人姓名">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item-content">
+                            <div class="item-media"><i class="icon icon-form-name"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title label">手机号</div>
+                                <div class="item-input">
+                                    <input id="linkman_phone1" type="tel" placeholder="紧急联系人手机">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!--紧急联系人1 end-->
+            <!--紧急联系人2 begin-->
+            <div class="content-block-title title1">紧急联系人2<span class="fc1"> (必填)</span></div>
+            <div class="list-block mgb1">
+                <ul class="people-ul">
+                    <li class="item-link">
+                        <div class="item-content">
+                            <div class="item-media"><i class="icon icon-form-name"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title label">关系</div>
+                                <div class="item-input input-txt create-contactre2">
+                                    请选择</div>
+                                <select id="linkmanSelect2" style="display: none;">
+                                    <option value="0">请选择</option>
+                                    <option value="1">配偶</option>
+                                    <option value="2">父母</option>
+                                    <option value="4">兄弟姐妹</option>
+                                    <option value="6">朋友</option>
+                                </select>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item-content">
+                            <div class="item-media"><i class="icon icon-form-name"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title label">姓名</div>
+                                <div class="item-input">
+                                    <input id="linkman_name2" type="text" placeholder="紧急联系人姓名">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item-content">
+                            <div class="item-media"><i class="icon icon-form-name"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title label">手机号</div>
+                                <div class="item-input">
+                                    <input id="linkman_phone2" type="tel" placeholder="紧急联系人手机">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!--紧急联系人1 end-->
+            <!--紧急联系人3 begin-->
+            <div class="content-block-title title1">紧急联系人3<span class="fc1"> (必填)</span></div>
+            <div class="list-block mgb1">
+                <ul class="people-ul">
+                    <li class="item-link">
+                        <div class="item-content">
+                            <div class="item-media"><i class="icon icon-form-name"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title label">关系</div>
+                                <div class="item-input input-txt create-contactre3">
+                                    请选择</div>
+                                <select id="linkmanSelect3" style="display: none;">
+                                    <option value="0">请选择</option>
+                                    <option value="4">兄弟姐妹</option>
+                                    <option value="6">朋友</option>
+                                    <option value="7">同事</option>
+                                </select>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item-content">
+                            <div class="item-media"><i class="icon icon-form-name"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title label">姓名</div>
+                                <div class="item-input">
+                                    <input id="linkman_name3" type="text" placeholder="紧急联系人姓名">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item-content">
+                            <div class="item-media"><i class="icon icon-form-name"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title label">手机号</div>
+                                <div class="item-input">
+                                    <input id="linkman_phone3" type="tel" placeholder="紧急联系人手机">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!--紧急联系人3 end-->
+            <nav class="bar bar-tab">
+                <div class="row no-gutter">
+                    <button type="button" id="otherLinkmanBtn" href="#" class="btn">认证</button>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- timely popup 3 end -->
+    <!-- timely popup 4 begin 更多信息 -->
+    <div class="popup popup-user-more">
+        <div class="content timely-bg">
+            <!--工作信息-->
+            <div class="content-block-title title1">工作信息</div>
+            <div class="list-block mgb1">
+                <ul class="people-ul">
+                    <li>
+                        <div class="item-content">
+                            <div class="item-media"><i class="icon icon-form-name"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title label wd1">公司名称</div>
+                                <div class="item-input">
+                                    <input id="companyName" type="text" placeholder="请填写您的公司名称">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="item-link">
+                        <div class="item-content">
+                            <div class="item-media"><i class="icon icon-form-name"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title label">公司地址</div>
+                                <div class="item-input">
+                                    <input id="citypickerworkads" type="text" placeholder="请选择所在地区" />
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item-content">
+                            <div class="item-media"><i class="icon icon-form-name"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title label wd1">公司电话</div>
+                                <div class="item-input">
+                                    <input id="companyPhone" type="text" placeholder="请填写您的公司电话">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item-content">
+                            <div class="item-media"><i class="icon icon-form-name"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title label">详细地址</div>
+                                <div class="item-input">
+                                    <input id="companyAddres" type="text" placeholder="请输入公司详细地址">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="item-link">
+                        <div class="item-content">
+                            <div class="item-media"><i class="icon icon-form-name"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title label">单位性质</div>
+                                <div class="item-input input-txt create-worknature">
+                                    请选择</div>
+                                <select id="worknature" style="display: none;">
+                                    <option value="0">请选择</option>
+                                    <option value="1">政府机关</option>
+                                    <option value="2">事业单位</option>
+                                    <option value="3">国有企业</option>
+                                    <option value="4">外资或合资</option>
+                                    <option value="5">私营企业</option>
+                                    <option value="6">其他</option>
+                                </select>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="item-link">
+                        <div class="item-content">
+                            <div class="item-media"><i class="icon icon-form-name"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title label">何时入职</div>
+                                <div class="item-input">
+                                    <input id="workdatainput" type="text" data-toggle='date' placeholder="选择日期" />
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="item-link">
+                        <div class="item-content">
+                            <div class="item-media"><i class="icon icon-form-name"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title label">所任职位</div>
+                                <div class="item-input input-txt create-worklevel">
+                                    请选择
+                                </div>
+                                <select id="worklevel" style="display: none;">
+                                    <option value="0">请选择</option>
+                                    <option value="1">员工</option>
+                                    <option value="2">基层管理人员</option>
+                                    <option value="3">中层管理人员或同级</option>
+                                    <option value="4">高层管理人员或同级</option>
+                                    <option value="5">自雇人士－私营或个体</option>
+                                </select>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="item-link">
+                        <div class="item-content">
+                            <div class="item-media"><i class="icon icon-form-name"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title label">学历情况</div>
+                                <div class="item-input input-txt create-education">
+                                    请选择
+                                </div>
+                                <select id="education" style="display: none">
+                                    <option value="0">请选择</option>
+                                    <option value="1">中专、高中及以下</option>
+                                    <option value="2">大专</option>
+                                    <option value="3">本科</option>
+                                    <option value="4">研究生及以上</option>
+                                    <option value="5">其他</option>
+                                </select>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!--居住信息-->
+            <div class="content-block-title title1">居住信息</div>
+            <div class="list-block mgb1">
+                <ul class="people-ul">
+                    <li class="item-link">
+                        <div class="item-content">
+                            <div class="item-media"><i class="icon icon-form-name"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title label">居住地址</div>
+                                <div class="item-input">
+                                    <input id='citypickerliveads' type="text" placeholder="请选择所在地区" />
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item-content">
+                            <div class="item-media"><i class="icon icon-form-name"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title label">详细地址</div>
+                                <div class="item-input">
+                                    <input id="homeAddress" type="text" placeholder="请输入居住详细地址">
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="item-link">
+                        <div class="item-content">
+                            <div class="item-media"><i class="icon icon-form-name"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title label">何时在此居住</div>
+                                <div class="item-input">
+                                    <input id="homeLiveTime" type="text" data-toggle='date' placeholder="选择日期" />
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!--生活信息-->
+            <div class="content-block-title title1">生活信息</div>
+            <div class="list-block mgb1">
+                <ul class="people-ul">
+                    <li class="item-link">
+                        <div class="item-content">
+                            <div class="item-media"><i class="icon icon-form-name"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title label">婚姻状况</div>
+                                <div class="item-input input-txt create-marred">
+                                    请选择
+                                </div>
+                                <select id="marital" style="display: none">
+                                    <option value="0">请选择</option>
+                                    <option value="1">未婚</option>
+                                    <option value="2">已婚－无子女</option>
+                                    <option value="3">已婚－有子女</option>
+                                    <option value="4">离异</option>
+                                    <option value="5">丧偶</option>
+                                </select>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="item-link hide" id="spouseitem">
+                        <div class="item-content">
+                            <div class="item-media"><i class="icon icon-form-name"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title label">配偶身份</div>
+                                <div class="item-input input-txt create-spouse">
+                                    请选择
+                                </div>
+                                <select id="spouse" style="display: none">
+                                    <option value="0">请选择</option>
+                                    <option value="1">上班族</option>
+                                    <option value="2">全职太太（或先生）</option>
+                                </select>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item-content">
+                            <div class="item-media"><i class="icon icon-form-name"></i></div>
+                            <div class="item-inner">
+                                <div class="item-title label">户口信息</div>
+                                <div class="item-input input-txt create-household">
+                                    请选择
+                                </div>
+                                <select id="household" style="display: none">
+                                    <option value="0">请选择</option>
+                                    <option value="1">有本地户口</option>
+                                    <option value="2">无本地户口</option>
+                                </select>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="cls"></div>
+        </div>
+        <nav class="bar bar-tab">
+            <div class="row no-gutter">
+                <button type="button" id="userMoreVerifyBtn" class="btn">认证</button>
+            </div>
+        </nav>
+    </div>
+    <div class="popup popup-user-sesame">
+        <iframe id="sesameiframe" style="width: 100%; height: 100%; background: #000;"></iframe>
+    </div>
+    <div class="user-addr-desc-wrapper">
+        <div class="user-addr-desc">
+            <div class="left"></div>
+            <div class="right">身份证住址是指身份证正面的"住址"栏对应的内容</div>
+        </div>
+    </div>
+    <script type="text/template" id="template">
+        <% data.forEach(function(item) {%>
+            <li>
+                <a href="<%= item.link %>" class="external" onclick="return onAddClick('<%= item.title %>', this)">
+                <img src="<%= picPrefix %><%= item.logoUri %>" alt="">
+                <span><%= item.title %></span>
+               </a>
+            </li>
+            <% }) %>
+    </script>
+    <!-- timely popup 4 end -->
+    <script type='text/javascript' src='//g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm-extend.min.js' charset='utf-8'></script>
+    <script type="text/javascript" src="//g.alicdn.com/msui/sm/0.6.2/js/sm-city-picker.min.js" charset="utf-8"></script>
+    <script src="https://static.geetest.com/static/tools/gt.js"></script>
+    <!-- build:js js/main.min.js -->
+    <script src="js/utils.js"></script>
+    <script src="js/ejs.min.js"></script>
+    <script src="js/generate_product.js"></script>
+    <script src="js/mobileFix.mini.js"></script>
+    <script src="js/exif.js"></script>
+    <script src="js/lrz.js"></script>
+    <script src="js/myminpic.js"></script>
+    <script type="text/javascript" src="js/timely.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/flash.js" charset="utf-8"></script>
+    <script type="text/javascript" src="js/md5.js" charset="utf-8"></script>
+    <!-- /build -->
+</body>
+
+</html>
+
+<script>
+window.addEventListener("popstate", function(e) {
+    var dialog = false;
+    var popups = $(".popup");
+    for (var i = 0; i < popups.length; i++) {
+        if ($(popups[i]).css("display") == "block") {
+            dialog = true;
+            break;
+        }
+    }
+    if (dialog) {
+        $.closeModal();
+        window.history.forward(1);
+        return;
+    }
+}, false);
+
+function othBtn() {
+
+    utils.bdTrack('下游-导流coop','超好用进件-审核失败页-banner',window.sessionStorage.merchantid);
+    utils.tipInfo({
+
+        content: '正在前往...',
+
+        callback: function() {
+
+            window.location.href = "coop.html";
+        }
+    })
+}
+
+
+function onAddClick(str, e) {
+
+    utils.bdTrack('下游-导流coop','超好用进件-审核失败页-推荐位',window.sessionStorage.merchantid);
+    if (typeof e === 'undefined') return false; //如果不传e，不需要等待
+
+    utils.tipInfo({
+
+        content: '正在前往...',
+
+        callback: function() {
+
+            location.href = e.href;
+        }
+    })
+
+    return false;
+
+    //TDAPP.onEvent("借款超市合作点击", str);
+}
+
+
+
+
+var page = {
+
+    init: function() {
+
+        this.generateGuide();
+        this.generateProductName();
+    },
+    generateGuide: function() {
+
+        generateProduct.init({
+
+            pageName: 'shenheshibai'
+        })
+    },
+
+    generateProductName: function() {
+
+        proTitle = !!proTitle ? proTitle : '快乐达钞市';
+
+        $('.product-name').text(proTitle);
+    }
+}
+
+page.init();
+
+
+</script>
+

@@ -1,0 +1,128 @@
+{
+    "status": 0,
+    "code": 0,
+    "success": true,
+    "message": null,
+    "data":
+    {
+        "basePic": "http://pic.credan.com/",
+        "data":
+        {
+            "remen": [
+            {
+                "id": 10023,
+                "pageKey": "daikuanchaoshi",
+                "positionKey": "remen",
+                "title": "快来贷",
+                "caption": " 放款就是快",
+                "logoUri": "c285ff53-395d-474f-83bd-b3033ee80992.jpg",
+                "tag": "",
+                "sortNum": 0,
+                "link": "http://www.kuailaidai.com/wap/index.php?ctl=service_promotion&partner=kuaileda1013",
+                "status": 1,
+                "createdTime": 1504519535000,
+                "lastUpdated": 1508145529036
+            },
+            {
+                "id": 10014,
+                "pageKey": "daikuanchaoshi",
+                "positionKey": "remen",
+                "title": "贷款王",
+                "caption": "1000元",
+                "logoUri": "dd8015be-c4c1-402f-a5a7-361796acb78a.png",
+                "tag": "火爆",
+                "sortNum": 0,
+                "link": "http://m.daikuandawang.com/vd/mxiaodai/login3v?channelSource=TG00870000001 ",
+                "status": 1,
+                "createdTime": 1504517115000,
+                "lastUpdated": 1508145564829
+            }],
+            "dae": [
+            {
+                "id": 10067,
+                "pageKey": "daikuanchaoshi",
+                "positionKey": "dae",
+                "title": "51急用钱",
+                "caption": "手机号就能申请",
+                "logoUri": "7d4fa7a6-e07e-4be9-ba1b-5a000e4c095f.png",
+                "tag": "",
+                "sortNum": 0,
+                "link": "https://m.5jyq.com/emm/members/activityPro?activityCode=10398",
+                "status": 1,
+                "createdTime": 1507884746000,
+                "lastUpdated": 1508041111680
+            },
+            {
+                "id": 10041,
+                "pageKey": "daikuanchaoshi",
+                "positionKey": "dae",
+                "title": "易融金街",
+                "caption": "苹果手机贷款",
+                "logoUri": "9d4ff4b6-55f3-46cb-b482-93a151319869.png",
+                "tag": "热门",
+                "sortNum": 0,
+                "link": "http://yrdh5.51kaledai.com/h5/signUp.html?channel_id=117",
+                "status": 1,
+                "createdTime": 1504771063000,
+                "lastUpdated": 1507851755782
+            },
+            {
+                "id": 10028,
+                "pageKey": "daikuanchaoshi",
+                "positionKey": "dae",
+                "title": "简单借款",
+                "caption": "1300元",
+                "logoUri": "da71896e-2d02-4f45-91f7-05552a917ecc.jpg",
+                "tag": "",
+                "sortNum": 0,
+                "link": "http://dwz.cn/6sXOvQ  ",
+                "status": 1,
+                "createdTime": 1504594761000,
+                "lastUpdated": 1507885625123
+            },
+            {
+                "id": 10002,
+                "pageKey": "daikuanchaoshi",
+                "positionKey": "dae",
+                "title": "闪信贷",
+                "caption": "500元",
+                "logoUri": "a9628487-d366-4489-a143-ac032f84b59e.jpg",
+                "tag": "",
+                "sortNum": 0,
+                "link": "https://m.trustrock.com.cn/landRegister.html?tracker_u=XJ_YMHD_YMHD34&hmsr=A%E7%B1%BB&hmpl=%E5%BC%88%E7%B1%B3%E4%BA%92%E5%8A%A8&hmcu=%E5%BC%88%E7%B1%B3%E4%BA%92%E5%8A%A834&hmkw=&hmci=",
+                "status": 1,
+                "createdTime": 1504272265000,
+                "lastUpdated": 1507885691783
+            }],
+            "xiaoe": [
+            {
+                "id": 10021,
+                "pageKey": "daikuanchaoshi",
+                "positionKey": "xiaoe",
+                "title": "借吧",
+                "caption": "新口子",
+                "logoUri": "b01e2a55-f2c2-4ed8-b300-f023745da318.png",
+                "tag": "",
+                "sortNum": 0,
+                "link": "http://t.chengye.com/marketing/20170919/index.html?cid=35&scid=23",
+                "status": 1,
+                "createdTime": 1504519213000,
+                "lastUpdated": 1507886773967
+            },
+            {
+                "id": 10013,
+                "pageKey": "daikuanchaoshi",
+                "positionKey": "xiaoe",
+                "title": "米多金融",
+                "caption": "新口子 需600分以上",
+                "logoUri": "a25dc37c-5bfb-4e1c-bab4-474fd3d5afd1.png",
+                "tag": "热门",
+                "sortNum": 0,
+                "link": "http://v.52xd.com/index.php/home/login/r/sign/516e864de761983cd885909ca468475b",
+                "status": 1,
+                "createdTime": 1504517057000,
+                "lastUpdated": 1508117900102
+            }]
+        }
+    }
+}

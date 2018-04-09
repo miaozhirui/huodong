@@ -1,0 +1,610 @@
+.graystrip {
+    height: .26rem;
+    background: #f2f0f0;
+}
+.item-title img {
+    width: 1.1rem;
+    height: auto;
+}
+
+#iagreementbtn {
+    color: #4bd394;
+    height: 3rem;
+    line-height: 1.2rem;
+    padding-top: .3rem;
+}
+
+.list-block ul:after {
+    background: none;
+}
+
+.button.button-big {
+    font-size: .9rem;
+    height: 2.1rem;
+    line-height: 2.1rem;
+    background: #4bd394;
+    border: none;
+    color: #fff;
+}
+
+.flashpoints {
+    width: 90%;
+    margin-top: 1.2rem;
+    overflow: hidden;
+}
+
+.flashpoints li {
+    width: 50%;
+    margin: .4rem 0;
+    padding: 0 5%;
+    line-height: 2.5rem;
+    height: 2.5rem;
+}
+
+.flashpoints li img{
+    width: 2.5rem;
+}
+
+.flashpoints li h6 ,
+.flashpoints li h5 {
+    color: #999999;
+    margin-left: .6rem;
+}
+
+.getaphonecode2 {
+    display: block;
+    width: 4.8rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+}
+
+#getPhcodebtn {
+    border: none;
+    color: #4bd394;
+    height: 1.8rem;
+    line-height: 1.8rem;
+    border-left: 1px #dedede solid;
+    border-radius: 0;
+    margin-top: .2rem;
+}
+
+.pditembg {
+    width: 100%;
+    height: 10rem;
+    background: #4bd394;
+    /*  box-shadow: 2px 2px 10px #eee; */
+    margin: .5rem 0;
+    position: relative;
+    overflow: hidden;
+    padding: .8rem .5rem .5rem .5rem;
+}
+.goldengradient {
+    background: -webkit-linear-gradient(left, #caab75, #d1b688);
+    /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(right, #caab75, #d1b688);
+    /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(right, #caab75, #d1b688);
+    /* Firefox 3.6 - 15 */
+    background: linear-gradient(to right, #caab75, #d1b688);
+    /* 标准的语法 */
+}
+.greengradient {
+    background: -webkit-linear-gradient(left, #36b046, #5fc06c);
+    /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(right, #36b046, #5fc06c);
+    /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(right, #36b046, #5fc06c);
+    /* Firefox 3.6 - 15 */
+    background: linear-gradient(to right, #36b046, #5fc06c);
+    /* 标准的语法 */
+}
+.instalment {
+    background: -webkit-linear-gradient(left, #ff8d5c, #ffa55a);
+    /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(right, #ff8d5c, #ffa55a);
+    /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(right, #ff8d5c, #ffa55a);
+    /* Firefox 3.6 - 15 */
+    background: linear-gradient(to right, #ff8d5c, #ffa55a);
+    /* 标准的语法 */
+}
+.goldengradient p,
+.greengradient p,
+.instalment p {
+    margin: 0;
+    width: auto;
+    padding-right:25px;
+    height: 1.3rem;
+    font-size: 1.2em;
+}
+
+.goldengradient p {
+    background: url(../img/littleflash.png) right .2em no-repeat;
+    background-size: 1rem 1rem;
+}
+
+.greengradient p {
+    background: url(../img/littlelocation.png) right .2em no-repeat;
+    background-size: 1rem 1rem;
+}
+.instalment p{
+    width: auto;
+    padding-right:25px;
+    background: url(../img/littlelocation.png) right .2em no-repeat;
+    background-size: 1rem 1rem;
+}
+.PDdisitem {
+    clear: both;
+    margin: 2rem auto 0 auto;
+}
+.PDdisitem h4 {
+    position: relative;
+}
+.PDdisitem h4 span {
+    display: block;
+    position: absolute;
+    top: .3rem;
+    right: .56rem;
+}
+.pditembg .row h6,
+.pditembg .row h4 {
+    text-align: center;
+    color: #fff;
+}
+.RTflag {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 4rem;
+    height: 4rem;
+    background: url(../img/new_p.png) no-repeat right top;
+    background-size: 100%;
+}
+.gq-icon{
+    position: absolute;
+    top: 0;
+    right: .4rem;
+    width: 3.65rem;
+    height: 2rem;
+    background: url(../img/gq-icon.png) no-repeat left top;
+    background-size: 100%;
+}
+.grayrighttopbg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 4rem;
+    height: 4rem;
+    background: url(../img/new_p2.png) no-repeat right top;
+    background-size: 100%;
+}
+.PDdis {
+    color: #fff;
+    line-height: 1.4rem;
+    height: 1.4rem;
+    padding-left: .4rem;
+    font-size: .7rem;
+}
+
+.bglittleline {
+    background: url(../img/littleline.png) right center no-repeat;
+    background-size:1px;
+}
+#regflash,
+#regrain,
+#falshcashin {
+    width: 12rem;
+    height: 2.4rem;
+    line-height: 2.4rem;
+    background: #fff;
+    margin-top: 1.5rem;
+}
+#flashinreview {
+    width: 12rem;
+    height: 2.4rem;
+    line-height: 2.4rem;
+    background: #fff;
+    margin-top: 1.5rem;
+    color:#caab75;
+}
+#flashsuccess a ,#flashreject a{
+    height: 2.4rem;
+    line-height: 2.4rem;
+    background: #fff;
+    margin-top: 1.5rem;
+    color:#caab75;
+}
+#raininreview,#raincashin,#getcashinstallment {
+    width: 12rem;
+    height: 2.4rem;
+    line-height: 2.4rem;
+    background: #fff;
+    margin-top: 1.5rem;
+    color:#4bd394;
+    border-top: 1px #d8d8d8 solid;
+}
+.fc1{
+    color: #ff8f5b;
+}
+#rainreject a {
+    height: 2.4rem;
+    line-height: 2.4rem;
+    background: #fff;
+    margin-top: 1.5rem;
+    color:#4bd394;
+}
+#regflash ,#falshcashin{
+    color: #caab75;
+}
+#getcashinstallment {
+    color: #ff8d5c;
+}
+#regrain {
+    color: #4bd394;
+}
+#basicIF .pditembg {
+    height: 5rem;
+}
+
+#basicIF {
+    background: #f5f2f2;
+}
+
+#basicIF .list-block .item-title.label {
+    width: 4rem;
+    font-size: .75rem;
+}
+#basicIF .list-block h6 {
+    margin: .6rem;
+}
+.btn2{
+    position: relative;
+    display: block;
+    width: 12rem;
+    height: 2.4rem;
+    margin: 0 auto;
+    line-height: 2.4rem;
+    background: #fff;
+    margin-top: 1.5rem;
+    font-size: .9rem;
+    border: none;
+    border-radius: .25rem;
+    box-sizing: border-box;
+    text-overflow: ellipsis;
+    text-align: center;
+    color: #ff8d5c;
+}
+.bar .bottombutton {
+    top: 0;
+    margin-top: 0;
+    height: 2.5rem;
+    line-height: 2.5rem;
+    border-radius: 0;
+}
+
+.biggreenbg {
+    position: relative;
+    height: 14rem;
+    background: #4bd394;
+}
+
+.loader img {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+.bigwave {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+#refreshRstBtn img {
+    display: inline;
+    width: .6rem;
+    height: .6rem;
+}
+
+.watingword {
+    margin: .4rem auto;
+    line-height: 1.2rem;
+    color: #999;
+}
+
+
+/*动画*/
+
+.load3 .loader {
+    font-size: 10px;
+    margin: 0 auto;
+    width: 5rem;
+    height: 5rem;
+    text-indent: -9999em;
+    border-radius: 50%;
+    position: relative;
+    -webkit-animation: load3 1.4s infinite linear;
+    animation: load3 1.4s infinite linear;
+}
+
+.load3 {
+    padding-top: 3rem;
+}
+
+
+/*
+.load3 .loader:before {
+  width: 50%;
+  height: 50%;
+  background: #FFF;
+  border-radius: 100% 0 0 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: '';
+}
+.load3 .loader:after {
+  background: #36b046;
+  width: 75%;
+  height: 75%;
+  border-radius: 50%;
+  content: '';
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+*/
+
+@-webkit-keyframes load3 {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes load3 {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+.watingGTH {
+    width: .3rem;
+    position: absolute;
+    top: 4rem;
+    left: 50%;
+    margin-left: -.15rem;
+}
+
+.reviewingword {
+    position: absolute;
+    top: 6.2rem;
+    left: 50%;
+    margin-left: -1rem;
+    color: #fff;
+}
+
+
+
+/*.list-block .item-title.label{
+    width: auto;*/
+
+.congratulateword {
+    height: 2.8rem;
+    background: #f5f5f5;
+    border-bottom: 1px #e4e4e4 solid;
+    text-align: center;
+    line-height: 2.8rem;
+    color: #4bd394;
+    font-weight: bold;
+}
+
+.popup-goestowechat img {
+    width: 10.4rem;
+    height: auto;
+}
+
+.wechartopenit {
+    margin: 0;
+    padding: 1.6rem;
+    line-height: .2rem;
+    color: #999;
+}
+
+#watingRSTwithoutbigNo .howgotowechart {
+    width: 12.3rem;
+    margin: 0 auto;
+}
+
+#watingRSTwithoutbigNoOk .howgotowechart {
+    width: 10rem;
+    margin: 0 auto;
+}
+
+#watingRSTwithoutbigNonot .howgotowechart {
+    width: 13rem;
+    margin: 0 auto;
+}
+
+.howgotowechart li {
+    // line-height: 1.8rem;
+    padding-bottom: .5rem;
+}
+
+#watingRSTwithoutbigNo .howgotowechart li h6 {
+    width: .8rem;
+    height: .8rem;
+    line-height: .8rem;
+    background: #2ba8f4; // margin-top: .46rem;
+    margin-right: .3rem;
+    border-radius: 50%;
+    color: #fff;
+    margin-top: .1rem;
+}
+
+#watingRSTwithoutbigNoOk .howgotowechart li h6 {
+    width: .8rem;
+    height: .8rem;
+    line-height: .8rem;
+    background: #4bd394; // margin-top: .46rem;
+    border-radius: 50%;
+    margin-right: .1rem;
+    color: #fff;
+     margin-top: .1rem;
+}
+
+#watingRSTwithoutbigNonot .howgotowechart li h6 {
+    width: .8rem;
+    height: .8rem;
+    line-height: .8rem;
+    background: #ff4f3e; // margin-top: .46rem;
+    margin-right: .3rem;
+    border-radius: 50%;
+    color: #fff;
+     margin-top: .1rem;
+}
+
+.howgotowechart li h5 {
+    width: 90%; // text-indent: .3rem;
+    color: #999;
+}
+.erweimaword {
+    margin: 0 auto .4rem auto;
+}
+.list-block .item-title.label{
+    width: auto;
+}
+#raincredit .graycantclickbtn,#flashcredit .graycantclickbtn{
+    background: none;
+    color: #fff;
+    border: 2px #fff solid;
+}
+.graybigpdbg {
+    background: #d9d9d9;
+}
+#resultimgbox {
+    width: 6rem;
+    margin: 2rem auto;
+}
+#resultimgbox img {
+    width: 100%;
+}
+#resulttitle {
+    margin: .5rem auto 1rem;
+}
+.watingword ,.popup-resultwithbigOk h5 {
+    line-height: 1.6rem;
+}
+#getcashandshare {
+    color: #4bd394;
+}
+#watingRSTwithoutbigNo .content,#watingRSTwithoutbigNoOk .content ,#watingRSTwithoutbigNonot .content{
+    background: #f6f2f3;
+}
+.bigcontt {
+    height: auto;
+    margin: .6rem auto;
+    background: #fff;
+    border-radius: .2rem .2rem .8rem .8rem;
+}
+.bigbluelinebg {
+    margin-bottom: .2rem;
+    height: 4rem;
+    border-radius: .2rem .2rem 0 0 ;
+    background: -webkit-linear-gradient(to bottom left, #22b4f9, #4b6ee6);
+    /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(to bottom left, #22b4f9, #4b6ee6);
+    /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(to bottom left, #22b4f9, #4b6ee6);
+    /* Firefox 3.6 - 15 */
+    background: linear-gradient(to bottom left, #22b4f9, #4b6ee6);
+    /* 标准的语法 */
+}
+.biggreenlinebg {
+    margin-bottom: .2rem;
+    height: 4rem;
+    border-radius: .2rem .2rem 0 0 ;
+    background: -webkit-linear-gradient(to bottom left, #64d851, #3cad43);
+    /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(to bottom left, #64d851, #3cad43);
+    /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(to bottom left, #64d851, #3cad43);
+    /* Firefox 3.6 - 15 */
+    background: linear-gradient(to bottom left, #64d851, #3cad43);
+    /* 标准的语法 */
+}
+.bigredlinebg {
+    margin-bottom: .2rem;
+    height: 4rem;
+    border-radius: .2rem .2rem 0 0 ;
+    background: -webkit-linear-gradient(to bottom left, #ff7343, #ff383a);
+    /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(to bottom left, #ff7343, #ff383a);
+    /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(to bottom left, #ff7343, #ff383a);
+    /* Firefox 3.6 - 15 */
+    background: linear-gradient(to bottom left, #ff7343, #ff383a);
+    /* 标准的语法 */
+}
+.bigbluelinebg dt ,.biggreenlinebg dt ,.bigredlinebg dt{
+    width: 2.6rem;
+    margin-right:.5rem;
+    animation: load3 1.4s infinite linear;
+}
+.bigbluelinebg dl ,.biggreenlinebg dl ,.bigredlinebg dl{
+    width: 8rem;
+    padding: .8rem 0 ;
+    position: relative;
+}
+.bigbluelinebg span ,.biggreenlinebg span ,.bigredlinebg span{
+    position: absolute;
+}
+.bigbluelinebg span {
+    width: .2rem;
+    left: 1.2rem;
+    top:1.5rem;
+}
+.biggreenlinebg span {
+    width: 1.6rem;
+    left: .60rem;
+    top:1.4rem;
+}
+.bigredlinebg span {
+    width: 1.6rem;
+    left: .52rem;
+    top:1.34rem;
+}
+/* 643a19 */
+
+/* cbcbcb */
+
+/*
+#36b046
+*/
+.fs1{
+    font-size: .7rem;
+}
+.rtbg-size{
+    background-size: 70%;
+}
+#daysList {
+	margin: 0 auto;
+}
+
+.login-bottom-desc{
+
+    text-align: center;
+}
